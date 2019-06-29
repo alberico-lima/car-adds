@@ -1,0 +1,110 @@
+https://es.olx.com.br/autos-e-pecas
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios
+
+
+particulares
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios?f=p
+
+pesquisa
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios?f=p&q=voyage
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios?f=p&q=prisma+2016
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios/gm-chevrolet/prisma?ctp=8&q=gas
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios/gm-chevrolet/prisma?me=60000&ms=20000&q=gas
+
+https://es.olx.com.br/autos-e-pecas/carros-vans-e-utilitarios?ctp=8&me=60000&ms=20000&q=gas&re=37&rs=34
+
+XPATHS
+-- lista de resultado de anuncios, um item por anuncio
+ad=response.xpath('//*[@id="main-ad-list"]/li')
+--quinto elemento da lista de resultados
+'//*[@id="main-ad-list"]/li[5]/a@href'
+-- pagina de detalhe
+-- título
+//*[@id="ad_title"]/text()
+-- preço
+//span[@class='actual-price']
+-- body
+//div[@class='OLXad-description mb30px']/p
+-- Optional Features
+//div[@class="OLXad-features mb20px mt20px"]/ul/li
+--details
+//div[@class="OLXad-details mb30px"]/div/ul/li
+-- municipio
+//div[@class='OLXad-location mb20px']//ul/li/p/strong/a/text()
+--seller
+//div[@class="box-user-info"]/div/div/div/div[1]/div[1]/span/text()
+-- phone
+//div[@class="box-user-info"]/div/div/div/div[3]/a/div[2]/text()
+
+
+<select class="form-field form-field-select half" name="rs" id="regdate_rs">
+				<option value="">Do ano</option>
+				<option value="37">2019</option>
+				<option value="36">2018</option>
+				<option value="35">2017</option>
+				<option value="34" selected="selected">2016</option>
+				<option value="33">2015</option>
+				<option value="32">2014</option>
+				<option value="31">2013</option>
+				<option value="30">2012</option>
+				<option value="29">2011</option>
+				<option value="28">2010</option>
+				<option value="27">2009</option>
+				<option value="26">2008</option>
+				<option value="25">2007</option>
+				<option value="24">2006</option>
+				<option value="23">2005</option>
+				<option value="22">2004</option>
+				<option value="21">2003</option>
+				<option value="20">2002</option>
+				<option value="19">2001</option>
+				<option value="18">2000</option>
+				<option value="17">1999</option>
+				<option value="16">1998</option>
+				<option value="15">1997</option>
+				<option value="14">1996</option>
+				<option value="13">1995</option>
+				<option value="12">1994</option>
+				<option value="11">1993</option>
+				<option value="10">1992</option>
+				<option value="9">1991</option>
+				<option value="8">1990</option>
+				<option value="7">1985</option>
+				<option value="6">1980</option>
+				<option value="5">1975</option>
+				<option value="4">1970</option>
+				<option value="3">1965</option>
+				<option value="2">1960</option>
+				<option value="1">1955</option>
+				<option value="0">1950 ou anterior</option>
+				
+			</select>
+
+Loja no anuncio de particula
+//*[@id="profile-wrapper-container"]/div/div/div[1]/div[2]/span
+<span class="sc-exAgwC dNdGGL sc-kkGfuU cowzSa sc-dnqmqq lhsaj" font-weight="500">Renacarveiculoses</span>
+<span class="sc-exAgwC dNdGGL sc-kkGfuU cowzSa sc-dnqmqq lhsaj" font-weight="500">Realiza Seminovos</span>
+
+ideias
+extrair do título e corpo do anúncio mais características como kit gas, financiamento, banco de couro, etc ...
+
+
+localiza seminovos - busca por estado, marca, modelo, versão, ano, valor, km, motor, acessórios, banco de couro, 
+https://seminovos.localiza.com/Paginas/resultado-busca.aspx?ct=1968_1987&st=ES&yr=2015_2019&pc=25000_500000
+https://seminovos.localiza.com/sedan/?ct=1968_1987&st=ES&yr=2015_2019&pc=25000_410000
+https://seminovos.localiza.com/Paginas/resultado-busca.aspx?ct=1968_1987&st=ES&yr=2015_2019&pc=25000_41000&km=0_60000
+https://seminovos.localiza.com/sedan
+https://seminovos.localiza.com/sedan?ct=1968_1987&st=ES&yr=2015_2019&pc=25000_500000
+https://seminovos.localiza.com/sedan?cat=4&ct=1968_1987&st=ES&yr=2015_2019&pc=25000_500000
+--XPATHS LOCALIZA
+resultado da pesquisa, todos os itens
+//div[@id="resultadoPesquisa"]
+item de resultado, atentar para o fato de que existe paginação
+//div[@id="resultadoPesquisa"]/div/a[@class="busca-resultado-item"]
+-- trying to get pagination strategy, the next page link is a javascrit post form
+https://stackoverflow.com/questions/32707632/scrapy-javascript-pagination-href
+
+
+
+
+
